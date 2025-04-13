@@ -1,0 +1,5 @@
+@for (row of boardArray(); track $index; let e = $even) {
+    <div>
+        <app-row [squares]={row} [isEven]={e} />
+    </div>
+}
