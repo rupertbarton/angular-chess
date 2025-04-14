@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, InputSignal} from '@angular/core';
 
 @Component({
   selector: 'app-square',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './square.component.scss'
 })
 export class SquareComponent {
-
+  evenColumn: InputSignal<boolean> = input(false)
+  evenRow: InputSignal<boolean> = input(false)
 }

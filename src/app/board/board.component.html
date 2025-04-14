@@ -1,5 +1,9 @@
-@for (row of boardArray(); track $index; let e = $even) {
-    <div>
-        <app-row [squares]={row} [isEven]={e} />
+@for (row of boardArray(); track x; let x = $index, evenColumn = $even) {
+    <div class="row-container">
+        @for (square of row; track y; let y = $index, evenRow = $even) {
+            <div >
+                <app-square [evenColumn]="evenColumn" [evenRow] = evenRow />
+            </div>
+            }
     </div>
 }
