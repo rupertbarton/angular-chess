@@ -1,1 +1,2 @@
-<div [class]="this.evenColumn() !== this.evenRow() ? 'normal-colour' : 'off-colour'">a</div>
+<div [class]="isHighlighted() ? 'highlighted-colour' : (square().y + square().x) % 2 === 0 ? 'normal-colour' : 'off-colour'"
+    [style.color]="square().piece?.colour">{{square().piece?.icon}}</div>

@@ -1,8 +1,12 @@
-@for (row of boardArray(); track x; let x = $index, evenColumn = $even) {
+<div>Current Player is: {{currentPlayer()}}</div>
+@for (row of board().rows; track $index) {
     <div class="row-container">
-        @for (square of row; track y; let y = $index, evenRow = $even) {
-            <div >
-                <app-square [evenColumn]="evenColumn" [evenRow] = evenRow />
+        @for (square of row; track $index) {
+            <div>
+                <app-square [square] = "square"
+                [isHighlighted] = "isSquareHighlighted(square)"
+                (click)="handleSquareClick(square)"
+                />
             </div>
             }
     </div>
